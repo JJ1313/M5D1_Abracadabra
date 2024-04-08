@@ -1,8 +1,9 @@
 import express from 'express';
 
 const app = express();
+app.use(express.static('public'));
 
-app.get('/', (req, res) => {
+app.get('/api/v1', (req, res) => {
   res.send('Respuesta main')
 });
 
