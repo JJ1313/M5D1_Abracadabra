@@ -9,6 +9,7 @@ let users = {
     "bala",
     "baco",
     "armin",
+    "rolito"
   ]
 }
 
@@ -19,7 +20,7 @@ app.get('/abracadabra/usuarios', (req, res) => {
 app.get("/abracadabra/juego/:usuario", 
 (req, res, next) => {
     let usuario = users.usuarios.find(user => user == req.params.usuario.toLowerCase());
-    usuario ? next() : res.status(204).sendFile('./assets/who.jpeg', {root: '.'}) 
+    usuario ? next() : res.sendFile('./assets/who.jpeg', {root: '.'}); 
   }, 
   (req, res) => {
     res.sendFile('index.html', {root: '.'})
